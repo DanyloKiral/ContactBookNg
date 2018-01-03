@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ContactsListComponent } from '.././contacts-list/contacts-list.component';
-import { ContactsService } from '../contacts.service';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
+import { ContactsService } from './services/contacts.service';
 
 
 @NgModule({
