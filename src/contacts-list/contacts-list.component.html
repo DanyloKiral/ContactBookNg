@@ -1,0 +1,6 @@
+<div class="list-group contacts-list">
+  <a href="#" class="list-group-item contacts-list-item" 
+    *ngFor="let contact of contacts" (click)="onSelect(contact)">
+    {{contact.name}}
+  </a>
+</div>
