@@ -7,13 +7,13 @@ export class ContactsService {
     contacts: Contact[];
     constructor() {
         this.contacts = [
-            { id: 1, name: 'Vasia', numbers: [] },
-            { id: 2, name: 'Jack', numbers: [] },
-            { id: 3, name: 'Sevil', numbers: [] }
+            { id: 1, name: 'Vasia', numbers: [], email: '', address: '' },
+            { id: 2, name: 'Jack', numbers: [], email: '', address: '' },
+            { id: 3, name: 'Sevil', numbers: [], email: '', address: '' }
           ];
      }
 
-    getContactLooukps(): ContactListItem[] {
+    getContactLookups(): ContactListItem[] {
         const mappedLookupList: ContactListItem[] = this.contacts
             .map((value: Contact, index: number, array: Contact[]) => {
                 return new ContactListItem(value.id, value.name);
@@ -26,8 +26,12 @@ export class ContactsService {
         return foundContact;
     }
 
-    addNewContact(newContact: Contact) {
+    addNewContact(newContact: Contact): number {
+        let maxId = 0;
+        this.contacts.forEach((value: Contact) => maxId = maxId > value.id ? maxId : value.id);
+        newContact.id = maxId + 1;
         this.contacts.push(newContact);
+        return newContact.id;
     }
 
     addNumberToContact(contactId: number, number: string) {

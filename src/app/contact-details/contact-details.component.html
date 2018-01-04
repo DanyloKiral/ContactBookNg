@@ -1,3 +1,6 @@
-<div>
+<div *ngIf="isValid">
   You've selected a contact! Name: {{contact.name}}
+</div>
+<div *ngIf="!isValid">
+  No such contact exist!
 </div>

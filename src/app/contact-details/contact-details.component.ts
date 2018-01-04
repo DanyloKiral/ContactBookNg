@@ -13,6 +13,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   private _contactService: ContactsService;
   id: number;
   contact: Contact;
+  isValid = true;
   routeSubscription: any;
 
   constructor(contactService: ContactsService, private route: ActivatedRoute) {
@@ -21,9 +22,19 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+      this.id = +params['id'];
       this.contact = this._contactService.getContact(this.id);
+      if (this.contact) {
+        this.isValid = true;
+        this.bindContact();
+      } else {
+        this.isValid = false;
+      }
    });
+  }
+
+  private bindContact() {
+
   }
 
   ngOnDestroy() {
