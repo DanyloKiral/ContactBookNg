@@ -30,22 +30,6 @@ export class ContactsService {
         return newContact.id;
     }
 
-    addNumberToContact(contactId: number, number: string) {
-        const contact = this.getContact(contactId);
-        const index = this.contacts.indexOf(contact);
-        contact.numbers.push(number);
-        this.contacts[index] = contact;
-    }
-
-    editContact(newContact: Contact) {
-        const contactIndex = this.contacts.findIndex((value: Contact) => value.id === newContact.id);
-        if (contactIndex > -1) {
-            this.contacts[contactIndex] = newContact;
-        } else {
-            console.log('Contact to edit is not exist. Id = ' + newContact.id);
-        }
-    }
-
     removeContact(contactId: number) {
         const index = this.contacts.findIndex((value: Contact) => value.id === contactId);
         if (index > -1) {

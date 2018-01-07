@@ -32,7 +32,7 @@ export class ContactsListComponent implements OnInit {
   removeContact(id) {
     const itemToRemoveIndex = this.contacts.findIndex((contact) => contact.id === id);
     if (itemToRemoveIndex > -1) {
-      this.contacts.splice(itemToRemoveIndex, 1);
+      this._contactsService.removeContact(id);
       if (this.router.isActive('/contact/' + id, true)) {
         this.router.navigateByUrl('/');
       }
