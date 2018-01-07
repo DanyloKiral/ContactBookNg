@@ -2,12 +2,16 @@
     <div class="row">
         <div class="col-sm-3">
             <div class="contacts-list-container">
-                <a href="#" [routerLink]="['/']">Contacts</a>
-                <app-contacts-list></app-contacts-list>
+                <div class="site-header">
+                    <a href="#" [routerLink]="['/']"><h2 class="site-header-text">Contact book</h2></a>
+                </div>
+                <div class="contacts-scroll-box">
+                    <app-contacts-list></app-contacts-list>
+                </div>
             </div>
         </div>
         <div class="col-sm-9">
-            <div>
+            <div class="page-content">
                 <router-outlet></router-outlet>
             </div>
         </div>

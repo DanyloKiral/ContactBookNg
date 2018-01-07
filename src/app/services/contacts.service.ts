@@ -7,9 +7,9 @@ export class ContactsService {
     contacts: Contact[];
     constructor() {
         this.contacts = [
-            { id: 1, name: 'Vasia', numbers: [], email: '', address: '' },
-            { id: 2, name: 'Jack', numbers: [], email: '', address: '' },
-            { id: 3, name: 'Sevil', numbers: [], email: '', address: '' }
+            { id: 1, name: 'Vasia', numbers: ['+380506481362', '284-03-84'], email: 'mail@mail.com', address: 'Lviv, Naukova street' },
+            { id: 2, name: 'Jack', numbers: [], email: 'mail4@mail.ua', address: '' },
+            { id: 3, name: 'Sevil', numbers: ['+79067356145'], email: '', address: 'Lviv, Ukraine' }
           ];
      }
 

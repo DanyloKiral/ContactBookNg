@@ -30,7 +30,8 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
    });
   }
 
-  nameChanged() {
+  removeNumber(index) {
+    this.contact.numbers.splice(index, 1);
   }
 
   addNewNumber(newNumber) {

@@ -1,9 +1,14 @@
 <div class="list-group contacts-list">
   <a href="#" class="list-group-item contacts-list-item" 
     *ngFor="let contact of contacts" 
-    (click)="onSelect(contact)" 
-    [routerLink]="['/contact', contact.id]" >
+    [routerLink]="['/contact', contact.id]"
+    [routerLinkActive]="'active'" >
     {{contact.name}}
+    <a class="btn btn-default pull-right remove-button remove-contact-button"
+      (click)="removeContact(contact.id)">
+      <span class="glyphicon glyphicon-remove remove-contact-button-icon" aria-hidden="true">
+      </span>
+    </a>
   </a>
 </div>
 <div class="input-group">
@@ -14,4 +19,4 @@
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
       </button>
     </span>
-  </div>  
+</div>  

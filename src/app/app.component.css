@@ -1,0 +1,20 @@
+.page-content {
+    padding-top: 20px;
+}
+
+.contacts-scroll-box {
+    max-height: calc(100vh - 100px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.site-header {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.page-content {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.remove-button {
+    position: relative;
+    bottom: 5px;
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    padding: 6px 5px;
+}
+
+.remove-button span.glyphicon {
+    top: 0;
+}
+
+.list-group-item {
+    min-height: 42px;
+}

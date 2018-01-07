@@ -21,14 +21,22 @@ export class ContactsListComponent implements OnInit {
     this.contacts = this._contactsService.getContacts();
   }
 
-  onSelect(contact: ContactListItem) {
-  }
-
   addNewContact(name) {
     const newContact = new Contact();
     newContact.name = name;
     const newId = this._contactsService.addNewContact(newContact);
     this.contacts = this._contactsService.getContacts();
     this.router.navigateByUrl('/contact/' + newId);
+  }
+
+  removeContact(id) {
+    const itemToRemoveIndex = this.contacts.findIndex((contact) => contact.id === id);
+    if (itemToRemoveIndex > -1) {
+      this.contacts.splice(itemToRemoveIndex, 1);
+      if (this.router.isActive('/contact/' + id, true)) {
+        this.router.navigateByUrl('/');
+      }
+      return false;
+    }
   }
 }

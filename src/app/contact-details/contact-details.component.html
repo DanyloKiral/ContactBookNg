@@ -28,9 +28,13 @@
             <div class="panel-heading">Phone numbers</div>
                 <ul class="list-group">
                     <li class="list-group-item" 
-                      *ngFor="let numb of contact.numbers">
+                      *ngFor="let numb of contact.numbers; let index = index;">
                       {{numb}}
-                      <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      <button class="btn btn-default pull-right remove-button remove-contact-number-button"
+                        (click)="removeNumber(index)">
+                        <span class="glyphicon glyphicon-remove remove-contact-number-button-icon" aria-hidden="true">
+                        </span>
+                      </button>
                     </li>
                     <li class="list-group-item" *ngIf="contact.numbers.length === 0">
                         No phone numbers!
@@ -40,8 +44,10 @@
           <div class="input-group">
               <input #newNumberInput type="number" class="form-control" placeholder="New phone number">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" 
-                  (click)="addNewNumber(newNumberInput.value); newNumberInput.value = '';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                <button class="btn btn-default add-contact-number-button" type="button" 
+                  (click)="addNewNumber(newNumberInput.value); newNumberInput.value = '';">
+                  <span class="glyphicon glyphicon-plus add-contact-number-button-icon" aria-hidden="true"></span>
+                </button>
               </span>
             </div>         
         </div>
