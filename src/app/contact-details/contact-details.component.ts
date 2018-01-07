@@ -10,14 +10,12 @@ import { Contact } from '../models/Contact';
   styleUrls: ['contact-details.component.css']
 })
 export class ContactDetailsComponent implements OnInit, OnDestroy {
-  private _contactService: ContactsService;
   id: number;
   contact: Contact;
   isValid = true;
   routeSubscription: any;
 
-  constructor(contactService: ContactsService, private route: ActivatedRoute) {
-    this._contactService = contactService;
+  constructor(private _contactService: ContactsService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -26,15 +24,17 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
       this.contact = this._contactService.getContact(this.id);
       if (this.contact) {
         this.isValid = true;
-        this.bindContact();
       } else {
         this.isValid = false;
       }
    });
   }
 
-  private bindContact() {
+  nameChanged() {
+  }
 
+  addNewNumber(newNumber) {
+    this.contact.numbers.push(newNumber);
   }
 
   ngOnDestroy() {

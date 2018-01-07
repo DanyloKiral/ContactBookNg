@@ -6,4 +6,12 @@
     {{contact.name}}
   </a>
 </div>
-<button class="btn btn-primary" (click)="addNewContact()">New contact</button>
+<div class="input-group">
+    <input #nameInput type="text" maxlength="20" class="form-control" placeholder="New contact name" />
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button" 
+        (click)="addNewContact(nameInput.value); nameInput.value = '';">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+    </span>
+  </div>  

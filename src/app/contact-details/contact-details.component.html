@@ -1,6 +1,52 @@
-<div *ngIf="isValid">
-  You've selected a contact! Name: {{contact.name}}
+<div *ngIf="isValid" class="">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label>Name: </label>
+        <input class="form-control" type="text" maxlength="20" placeholder="Name"
+          [(ngModel)]="contact.name" (change)="nameChanged()" />
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label>Address: </label>
+        <input class="form-control" type="text" placeholder="Address"
+          [(ngModel)]="contact.address" />
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label>Email: </label>
+        <input class="form-control" type="email" placeholder="Email"
+          [(ngModel)]="contact.email" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Phone numbers</div>
+                <ul class="list-group">
+                    <li class="list-group-item" 
+                      *ngFor="let numb of contact.numbers">
+                      {{numb}}
+                      <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    </li>
+                    <li class="list-group-item" *ngIf="contact.numbers.length === 0">
+                        No phone numbers!
+                    </li>
+                  </ul>
+          </div>
+          <div class="input-group">
+              <input #newNumberInput type="number" class="form-control" placeholder="New phone number">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" 
+                  (click)="addNewNumber(newNumberInput.value); newNumberInput.value = '';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+              </span>
+            </div>         
+        </div>
+  </div>
 </div>
 <div *ngIf="!isValid">
-  No such contact exist!
+  <div>No such contact exist!</div>
 </div>

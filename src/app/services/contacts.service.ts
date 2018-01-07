@@ -13,12 +13,8 @@ export class ContactsService {
           ];
      }
 
-    getContactLookups(): ContactListItem[] {
-        const mappedLookupList: ContactListItem[] = this.contacts
-            .map((value: Contact, index: number, array: Contact[]) => {
-                return new ContactListItem(value.id, value.name);
-            });
-        return mappedLookupList;
+    getContacts(): Contact[] {
+        return this.contacts;
     }
 
     getContact(id: number): Contact {
