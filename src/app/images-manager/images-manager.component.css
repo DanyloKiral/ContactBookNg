@@ -1,0 +1,38 @@
+.contact-image-thumbnail {
+    height: 200px !important;
+}
+
+.images-list-item {
+    display: inline-block;
+    padding-right: 5px;
+    min-height: 210px;
+}
+
+.images-manager-wrapper {
+    min-height: 210px; 
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.new-image-item {
+    background-color: gainsboro;
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.new-image-item:hover {
+    background-color: #ccc;
+}
+
+.new-image-item:hover span.glyphicon {
+    opacity: 0.4;
+}
+
+.new-image-item span.glyphicon {
+    font-size: 70px;
+    opacity: 0.3;
+    line-height: 200px;
+    left: 3px;
+}

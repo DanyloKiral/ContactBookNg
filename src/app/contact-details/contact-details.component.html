@@ -4,7 +4,7 @@
       <div class="form-group">
         <label>Name: </label>
         <input class="form-control" type="text" maxlength="20" placeholder="Name"
-          [(ngModel)]="contact.name" (change)="nameChanged()" />
+          [(ngModel)]="contact.name" />
       </div>
     </div>
     <div class="col-sm-4">
@@ -51,6 +51,11 @@
               </span>
             </div>         
         </div>
+  </div>
+  <div class="row images-row">
+    <div class="col-sm-12">
+      <app-images-manager [(images)]="contact.images"></app-images-manager>
+    </div>
   </div>
 </div>
 <div *ngIf="!isValid">

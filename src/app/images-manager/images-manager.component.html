@@ -1,0 +1,17 @@
+<div class="images-manager-wrapper">
+  <input type="file" class="hidden" accept="image/*" #fileInput 
+    (change)="addNewImage(fileInput.files); fileInput.value = '';" />
+  <div class="hidden">
+    <button class="btn btn-primary" (click)="fileInput.click()">
+      Add images
+    </button>
+  </div>
+  <div class="images-list">
+    <div *ngFor="let image of images" class="images-list-item">
+      <img [src]="image" class="contact-image-thumbnail img-thumbnail" alt="Contact image" />
+    </div>
+    <div class="images-list-item new-image-item" (click)="fileInput.click()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </div>
+  </div>
+</div>

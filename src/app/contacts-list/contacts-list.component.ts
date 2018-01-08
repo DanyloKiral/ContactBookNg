@@ -22,11 +22,13 @@ export class ContactsListComponent implements OnInit {
   }
 
   addNewContact(name) {
-    const newContact = new Contact();
-    newContact.name = name;
-    const newId = this._contactsService.addNewContact(newContact);
-    this.contacts = this._contactsService.getContacts();
-    this.router.navigateByUrl('/contact/' + newId);
+    if (name) {
+      const newContact = new Contact();
+      newContact.name = name;
+      const newId = this._contactsService.addNewContact(newContact);
+      this.contacts = this._contactsService.getContacts();
+      this.router.navigateByUrl('/contact/' + newId);
+    }
   }
 
   removeContact(id) {

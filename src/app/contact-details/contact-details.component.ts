@@ -35,7 +35,9 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   }
 
   addNewNumber(newNumber) {
-    this.contact.numbers.push(newNumber);
+    if (newNumber) {
+      this.contact.numbers.push(newNumber);
+    }
   }
 
   ngOnDestroy() {
