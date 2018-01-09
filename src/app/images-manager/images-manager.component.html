@@ -7,7 +7,7 @@
     </button>
   </div>
   <div class="images-list">
-    <div *ngFor="let image of images" class="images-list-item">
+    <div *ngFor="let image of images" class="images-list-item" (click)="onImageSelect(image)">
       <img [src]="image" class="contact-image-thumbnail img-thumbnail" alt="Contact image" />
     </div>
     <div class="images-list-item new-image-item" (click)="fileInput.click()">
@@ -15,3 +15,4 @@
     </div>
   </div>
 </div>
+<app-image-viewer *ngIf="!!selectedImageUrl" [imageUrl]="selectedImageUrl" (viewerClose)="selectedImageUrl = null;"></app-image-viewer>

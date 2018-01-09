@@ -9,6 +9,7 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 import { ContactsService } from './services/contacts.service';
 import { HomeComponent } from './home/home.component';
 import { ImagesManagerComponent } from './images-manager/images-manager.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ImagesManagerComponent } from './images-manager/images-manager.componen
     ContactsListComponent,
     ContactDetailsComponent,
     HomeComponent,
-    ImagesManagerComponent
+    ImagesManagerComponent,
+    ImageViewerComponent
 ],
   imports: [
     BrowserModule,

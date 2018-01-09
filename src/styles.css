@@ -14,3 +14,7 @@
 .list-group-item {
     min-height: 42px;
 }
+
+.input-group input.form-control, .input-group .input-group-btn>.btn, .list-group-item.active {
+    z-index: 0;
+}

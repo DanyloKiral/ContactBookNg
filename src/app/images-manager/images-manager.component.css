@@ -1,15 +1,21 @@
 .contact-image-thumbnail {
-    height: 200px !important;
+    height: 100px !important;
 }
 
 .images-list-item {
     display: inline-block;
     padding-right: 5px;
-    min-height: 210px;
+    min-height: 95px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.images-list-item:not(.new-image-item):hover {
+    opacity: 0.7;
 }
 
 .images-manager-wrapper {
-    min-height: 210px; 
+    min-height: 100px; 
     width: 100%;
     border: 1px solid #ccc;
     padding: 5px;
@@ -17,9 +23,9 @@
 
 .new-image-item {
     background-color: gainsboro;
-    width: 150px;
-    cursor: pointer;
+    width: 80px;
     text-align: center;
+    margin-top: 2.5px;
 }
 
 .new-image-item:hover {
@@ -31,8 +37,8 @@
 }
 
 .new-image-item span.glyphicon {
-    font-size: 70px;
+    font-size: 40px;
     opacity: 0.3;
-    line-height: 200px;
+    line-height: 90px;
     left: 3px;
 }

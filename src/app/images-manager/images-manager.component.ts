@@ -10,6 +10,7 @@ import { DoCheck } from '@angular/core/src/metadata/lifecycle_hooks';
 export class ImagesManagerComponent implements OnInit, DoCheck {
   @Input() images: string[];
   @Output() imagesChange = new EventEmitter();
+  selectedImageUrl: string = null;
 
   ngDoCheck() {
     this.imagesChange.next(this.images);
@@ -21,11 +22,14 @@ export class ImagesManagerComponent implements OnInit, DoCheck {
       const file: File = files[0];
       const myReader: FileReader = new FileReader();
       myReader.onloadend = (e) => {
-        console.log(myReader.result);
         images.push(myReader.result);
       };
       myReader.readAsDataURL(file);
     }
+  }
+
+  onImageSelect(imageUrl) {
+    this.selectedImageUrl = imageUrl;
   }
 
   ngOnInit() {

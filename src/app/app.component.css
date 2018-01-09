@@ -5,7 +5,7 @@
 .contacts-scroll-box {
     max-height: calc(100vh - 100px);
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .site-header {
@@ -14,7 +14,7 @@
 }
 
 .page-content {
-    max-height: 100vh;
+    height: 100vh;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
