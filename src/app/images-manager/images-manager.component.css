@@ -11,10 +11,6 @@
     position: relative;
 }
 
-.images-list-item:not(.new-image-item):hover {
-    /*opacity: 0.7;*/
-}
-
 .images-manager-wrapper {
     min-height: 100px; 
     width: 100%;

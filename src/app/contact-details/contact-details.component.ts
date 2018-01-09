@@ -40,11 +40,6 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-  nameChange(e, input){
-    let g = e;
-    let y = input;
-  }
-
   ngOnDestroy() {
     this.routeSubscription.unsubscribe();
   }

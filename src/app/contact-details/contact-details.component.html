@@ -3,8 +3,8 @@
     <div class="col-sm-4">
       <div class="form-group">
         <label>Name: </label>
-        <input #name="ngModel" class="form-control" type="text" maxlength="20" placeholder="Name"
-          [(ngModel)]="contact.name" (change)="nameChange($event, name)" required />
+        <input #name class="form-control" type="text" maxlength="20" placeholder="Name"
+          [(ngModel)]="contact.name" required />
       </div>
     </div>
     <div class="col-sm-4">
@@ -17,7 +17,7 @@
     <div class="col-sm-4">
       <div class="form-group">
         <label>Email: </label>
-        <input #email="ngModel" class="form-control" type="email" placeholder="Email"
+        <input #email class="form-control" type="email" placeholder="Email"
           [(ngModel)]="contact.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
       </div>
     </div>
@@ -42,7 +42,7 @@
                   </ul>
           </div>
           <div class="input-group">
-              <input #newNumberInput="ngModel" type="number" class="form-control" placeholder="New phone number" ngModel required>
+              <input #newNumberInput type="number" class="form-control" placeholder="New phone number" ngModel required>
               <span class="input-group-btn">
                 <button class="btn btn-default add-contact-number-button" type="button" 
                   (click)="addNewNumber(newNumberInput.value); newNumberInput.value = '';">
