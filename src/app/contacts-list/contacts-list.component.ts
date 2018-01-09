@@ -21,7 +21,7 @@ export class ContactsListComponent implements OnInit {
     this.contacts = this._contactsService.getContacts();
   }
 
-  addNewContact(name) {
+  addNewContact(name: string) {
     if (name) {
       const newContact = new Contact();
       newContact.name = name;
@@ -31,7 +31,7 @@ export class ContactsListComponent implements OnInit {
     }
   }
 
-  removeContact(id) {
+  removeContact(id: number) {
     const itemToRemoveIndex = this.contacts.findIndex((contact) => contact.id === id);
     if (itemToRemoveIndex > -1) {
       this._contactsService.removeContact(id);

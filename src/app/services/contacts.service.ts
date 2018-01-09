@@ -11,7 +11,7 @@ export class ContactsService {
                 email: 'mail@mail.com', address: 'Lviv, Naukova street', images: [] },
             { id: 2, name: 'Jack', numbers: [], email: 'mail4@mail.ua', address: '',
                 images: [] },
-            { id: 3, name: 'Sevil', numbers: ['+79067356145'], email: '', address: 'Lviv, Ukraine',
+            { id: 3, name: 'Monica', numbers: ['+79067356145'], email: '', address: 'Lviv, Ukraine',
                 images: [] }
           ];
      }

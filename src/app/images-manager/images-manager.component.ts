@@ -28,7 +28,7 @@ export class ImagesManagerComponent implements OnInit, DoCheck {
     }
   }
 
-  onImageSelect(imageUrl) {
+  onImageSelect(imageUrl: string) {
     this.selectedImageUrl = imageUrl;
   }
 
