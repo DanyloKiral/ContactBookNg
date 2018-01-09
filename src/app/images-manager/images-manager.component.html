@@ -7,8 +7,9 @@
     </button>
   </div>
   <div class="images-list">
-    <div *ngFor="let image of images" class="images-list-item" (click)="onImageSelect(image)">
+    <div *ngFor="let image of images; let index = index;" class="images-list-item" (click)="onImageSelect(image)">
       <img [src]="image" class="contact-image-thumbnail img-thumbnail" alt="Contact image" />
+      <span class="remove-image" (click)="removeImage(index)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>
     </div>
     <div class="images-list-item new-image-item" (click)="fileInput.click()">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

@@ -32,6 +32,10 @@ export class ImagesManagerComponent implements OnInit, DoCheck {
     this.selectedImageUrl = imageUrl;
   }
 
+  removeImage(index: number) {
+    this.images.splice(index, 1);
+  }
+
   ngOnInit() {
   }
 }
