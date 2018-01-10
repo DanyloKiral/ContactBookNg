@@ -10,6 +10,7 @@ import { ContactsService } from './services/contacts.service';
 import { HomeComponent } from './home/home.component';
 import { ImagesManagerComponent } from './images-manager/images-manager.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -20,15 +21,11 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     HomeComponent,
     ImagesManagerComponent,
     ImageViewerComponent
-],
+  ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: 'contact/:id', component: ContactDetailsComponent },
-      { path: 'home/', component: HomeComponent },
-      { path: '', redirectTo: 'home/', pathMatch: 'full' }
-    ])
+    AppRoutingModule
   ],
   providers: [
     ContactsService

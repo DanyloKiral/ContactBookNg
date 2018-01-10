@@ -24,8 +24,6 @@ export class ContactsService {
     }
 
     getContact(id: number): Promise<Contact> {
-        // const foundContact: Contact = this.contacts.find((value: Contact) => value.id === id);
-        // return foundContact;
         return this.contactsPromise.then(x => x.find(c => c.id === id));
     }
 

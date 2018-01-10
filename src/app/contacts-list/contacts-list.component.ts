@@ -27,7 +27,7 @@ export class ContactsListComponent implements OnInit {
       newContact.name = name;
       const newId = this._contactsService.addNewContact(newContact);
       this._contactsService.getContacts().then(x => this.contacts = x);
-      this.router.navigateByUrl('/contact/' + newId);
+      this.router.navigate(['contact', newId]);
     }
   }
 
@@ -36,7 +36,7 @@ export class ContactsListComponent implements OnInit {
     if (itemToRemoveIndex > -1) {
       this._contactsService.removeContact(id);
       if (this.router.isActive('/contact/' + id, true)) {
-        this.router.navigateByUrl('/');
+        this.router.navigate(['']);
       }
       return false;
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContactsService } from '../services/contacts.service';
 import { Contact } from '../models/Contact';
@@ -9,17 +9,16 @@ import { Contact } from '../models/Contact';
   templateUrl: 'contact-details.component.html',
   styleUrls: ['contact-details.component.css']
 })
-export class ContactDetailsComponent implements OnInit, OnDestroy {
+export class ContactDetailsComponent implements OnInit {
   id: number;
   contact: Contact;
   isValid = true;
-  routeSubscription: any;
 
   constructor(private _contactService: ContactsService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.routeSubscription = this.route.params.subscribe(params => {
+    this.route.params.forEach(params => {
       this.id = +params['id'];
       this._contactService.getContact(this.id).then(x => {
         this.contact = x;
@@ -40,9 +39,5 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     if (newNumber) {
       this.contact.numbers.push(newNumber);
     }
-  }
-
-  ngOnDestroy() {
-    this.routeSubscription.unsubscribe();
   }
 }
