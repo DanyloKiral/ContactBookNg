@@ -21,12 +21,14 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe(params => {
       this.id = +params['id'];
-      this.contact = this._contactService.getContact(this.id);
-      if (this.contact) {
-        this.isValid = true;
-      } else {
-        this.isValid = false;
-      }
+      this._contactService.getContact(this.id).then(x => {
+        this.contact = x;
+        if (this.contact) {
+          this.isValid = true;
+        } else {
+          this.isValid = false;
+        }
+      });
    });
   }
 

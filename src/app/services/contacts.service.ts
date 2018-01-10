@@ -5,6 +5,7 @@ import { Contact } from './../models/Contact';
 @Injectable()
 export class ContactsService {
     contacts: Contact[];
+    contactsPromise: Promise<Contact[]>;
     constructor() {
         this.contacts = [
             { id: 1, name: 'Vasia', numbers: ['+380506481362', '284-03-84'],
@@ -14,15 +15,18 @@ export class ContactsService {
             { id: 3, name: 'Monica', numbers: ['+79067356145'], email: '', address: 'Lviv, Ukraine',
                 images: [] }
           ];
+
+          this.contactsPromise = Promise.resolve(this.contacts);
      }
 
-    getContacts(): Contact[] {
-        return this.contacts;
+    getContacts(): Promise<Contact[]> {
+        return this.contactsPromise;
     }
 
-    getContact(id: number): Contact {
-        const foundContact: Contact = this.contacts.find((value: Contact) => value.id === id);
-        return foundContact;
+    getContact(id: number): Promise<Contact> {
+        // const foundContact: Contact = this.contacts.find((value: Contact) => value.id === id);
+        // return foundContact;
+        return this.contactsPromise.then(x => x.find(c => c.id === id));
     }
 
     addNewContact(newContact: Contact): number {

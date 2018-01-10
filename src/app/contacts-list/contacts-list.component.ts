@@ -18,7 +18,7 @@ export class ContactsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this._contactsService.getContacts();
+    this._contactsService.getContacts().then(x => this.contacts = x);
   }
 
   addNewContact(name: string) {
@@ -26,7 +26,7 @@ export class ContactsListComponent implements OnInit {
       const newContact = new Contact();
       newContact.name = name;
       const newId = this._contactsService.addNewContact(newContact);
-      this.contacts = this._contactsService.getContacts();
+      this._contactsService.getContacts().then(x => this.contacts = x);
       this.router.navigateByUrl('/contact/' + newId);
     }
   }
