@@ -18,17 +18,13 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.forEach(params => {
-      this.id = +params['id'];
-      this._contactService.getContact(this.id).then(x => {
-        this.contact = x;
-        if (this.contact) {
-          this.isValid = true;
-        } else {
-          this.isValid = false;
-        }
-      });
-   });
+   this.route.data.forEach((data: { contact: Contact }) => {
+    if (data && data.contact) {
+      this.contact = data.contact;
+    } else {
+      this.isValid = false;
+    }
+ });
   }
 
   removeNumber(index: number) {

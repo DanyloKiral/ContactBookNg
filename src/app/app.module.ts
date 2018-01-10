@@ -1,3 +1,4 @@
+import { ContactDetailsResolve } from './contact-details/contact-details-resolve.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    ContactsService
+    ContactsService,
+    ContactDetailsResolve
   ],
   bootstrap: [AppComponent]
 })
