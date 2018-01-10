@@ -21,6 +21,7 @@ export class ContactDetailsComponent implements OnInit {
    this.route.data.forEach((data: { contact: Contact }) => {
     if (data && data.contact) {
       this.contact = data.contact;
+      this.isValid = true;
     } else {
       this.isValid = false;
     }
