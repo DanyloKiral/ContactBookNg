@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ContactListItem } from './../models/ContactListItem';
-import { Contact } from './../models/Contact';
+import { Contact } from './../shared/Contact';
 
 @Injectable()
 export class ContactsService {

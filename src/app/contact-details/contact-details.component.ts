@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ContactsService } from '../services/contacts.service';
-import { Contact } from '../models/Contact';
+import { ContactsService } from '../shared/contacts.service';
+import { Contact } from '../shared/Contact';
 
 @Component({
   moduleId: module.id,
